@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Vue JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Ciao {{ username }}! Ecco la tua fattoria</h1>
+
+      <input type="text" v-model="username">
+      <button @click="save">Salva</button>
+
+      <h3>Aggiungi un nuovo animale</h3>
+      <div>
+        <label for="type">Tipologia</label>
+        <input type="text" id="type" v-model="newAnimal.type">
+      </div>
+      <div>
+        <label for="name">Nome</label>
+        <input type="text" id="name" v-model="newAnimal.name">
+      </div>
+      <div>
+        <button @click="addAnimal">Aggiungi</button>
+      </div>
+
+      <ul>
+        <li v-for="curAnimal in animals">
+          <strong>{{ curAnimal.type }}</strong> {{ curAnimal.name }}
+        </li>
+      </ul>
+
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
